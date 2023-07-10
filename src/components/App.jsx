@@ -1,16 +1,22 @@
-export const App = () => {
+import { Component } from "react";
+import Form from "./Form/Form";
+import Section from "./Section/Section";
+// import { nanoid } from 'nanoid';
+
+export class App extends Component {
+  state = {
+    contacts: [],
+    name: '',
+    number: '',
+  };
+
+render() {
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
+    <div className="container">
+      <Section title="Phonebook">
+      <Form/>
+      </Section>
     </div>
   );
 };
+}
