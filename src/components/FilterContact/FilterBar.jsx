@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { StyledFilterBar } from './FilterBar.styled';
 
 export default class FilterBar extends Component {
   handleInputChange = event => {
@@ -6,7 +7,7 @@ export default class FilterBar extends Component {
   };
   render() {
     return (
-      <label>
+      <StyledFilterBar>
         Find contact by name
         <input
           onChange={this.handleInputChange}
@@ -14,7 +15,7 @@ export default class FilterBar extends Component {
           name="search"
           value={this.props.filter}
         />
-      </label>
+      </StyledFilterBar>
     );
   }
 }

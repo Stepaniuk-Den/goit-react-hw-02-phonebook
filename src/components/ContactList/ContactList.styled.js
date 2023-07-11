@@ -1,8 +1,7 @@
 import styled from 'styled-components';
 
 export const StyledContactList = styled.ul`
-  display: block;
-
+  width: 100%;
   & li {
     display: flex;
     margin: 10px 0;

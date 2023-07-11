@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Form from './Form/Form';
+import ContactForm from './ContactForm/ContactForm';
 import Section from './Section/Section';
 import { nanoid } from 'nanoid';
 import ContactList from './ContactList/ContactList';
@@ -20,6 +20,13 @@ export class App extends Component {
     };
     this.setState({ contacts: [contact, ...this.state.contacts] });
   };
+
+  onDublicate = dublicated => {
+    const dublicate = this.state.contacts.filter(
+      contact => contact.name === dublicated
+    );
+    return dublicate.length > 0;
+  };
   onFilter = filtered => {
     this.setState({ filter: filtered });
   };
@@ -38,7 +45,10 @@ export class App extends Component {
     return (
       <div className="container">
         <Section title="Phonebook">
-          <Form onAddContact={this.onAddContact} />
+          <ContactForm
+            onAddContact={this.onAddContact}
+            onDublicate={this.onDublicate}
+          />
         </Section>
         <Section title="Contacts">
           <FilterBar filter={this.state.filter} onFilter={this.onFilter} />
