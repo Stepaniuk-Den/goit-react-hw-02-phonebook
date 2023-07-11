@@ -2,16 +2,29 @@ import React, { Component } from 'react';
 import { StyledForm } from './Form.styled';
 
 export default class Form extends Component {
-
+  state = {
+    contacts: [],
+    name: '',
+    number: '',
+  };
 
   onInputChange = e => {
     const name = e.target.name;
     const value = e.target.value;
     this.setState({ [name]: value });
   };
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+    // const contactData = {
+
+    // }
+    console.log(this.state.contacts);
+  }
+
   render() {
     return (
-      <StyledForm>
+      <StyledForm onSubmit={this.handleSubmit}>
         <label>
           Name
           <input

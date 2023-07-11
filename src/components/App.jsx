@@ -1,4 +1,4 @@
-import { Component } from "react";
+import React, { Component } from 'react';
 import Form from "./Form/Form";
 import Section from "./Section/Section";
 // import { nanoid } from 'nanoid';
