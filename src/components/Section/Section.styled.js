@@ -8,5 +8,6 @@ export const StyledSection = styled.section`
 
   & h2 {
     font-size: 2rem;
+    margin: 10px 0;
   }
 `;
