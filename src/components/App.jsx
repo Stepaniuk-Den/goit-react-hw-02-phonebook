@@ -18,7 +18,9 @@ export class App extends Component {
       id: nanoid(),
       ...contactData,
     };
-    this.setState({ contacts: [contact, ...this.state.contacts] });
+    this.setState(prevState => ({
+      contacts: [contact, ...prevState.contacts],
+    }));
   };
 
   onDublicate = dublicated => {
@@ -32,9 +34,9 @@ export class App extends Component {
   };
 
   onRemoveContact = contactId => {
-    this.setState({
-      contacts: this.state.contacts.filter(contact => contact.id !== contactId),
-    });
+    this.setState(prevState => ({
+      contacts: prevState.contacts.filter(contact => contact.id !== contactId),
+    }));
   };
   render() {
     const filteredContact = this.state.contacts.filter(contact =>

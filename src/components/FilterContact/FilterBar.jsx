@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { StyledFilterBar } from './FilterBar.styled';
 
 export default class FilterBar extends Component {
@@ -19,3 +20,7 @@ export default class FilterBar extends Component {
     );
   }
 }
+FilterBar.propTypes = {
+  filter: PropTypes.string,
+  onFilter: PropTypes.func,
+}.isRequired;
